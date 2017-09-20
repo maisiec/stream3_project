@@ -1,5 +1,5 @@
 env
 .idea
 .python
-.pyc
+*.pyc
 .DS_Store
