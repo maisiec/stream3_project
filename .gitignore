@@ -2,3 +2,4 @@ env
 .idea
 .python
 .pyc
+.DS_Store
