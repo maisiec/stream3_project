@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
-from django.tempalte.context_processors import csrf
+from django.template.context_processors import csrf
 from accounts.forms import UserRegistrationForm
 
 # Create your views here.
