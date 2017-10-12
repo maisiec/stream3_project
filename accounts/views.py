@@ -55,3 +55,8 @@ def login(request):
     args = {'form':form}
     args.update(csrf(request))
     return render(request, 'login.html', args)
+
+def logout(request):
+    auth.logout(request)
+    messages.success(request, 'You have successfully logged out')
+    return redirect(reverse('index'))
