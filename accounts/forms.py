@@ -10,7 +10,7 @@ class UserRegistrationForm(UserCreationForm):
     )
  
     password2 = forms.CharField(
-        label='Password Confirmation',
+        label='Confirm Password',
         widget=forms.PasswordInput
     )
  
@@ -39,3 +39,7 @@ class UserRegistrationForm(UserCreationForm):
             instance.save()
  
         return instance
+
+class UserLoginForm(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
