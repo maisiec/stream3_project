@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'paypal.standard.ipn',
     'home',
     'accounts',
 ]
@@ -138,3 +139,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# PayPal Settings
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
