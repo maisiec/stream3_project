@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'home',
     'accounts',
+    'products',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
