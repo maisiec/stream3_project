@@ -13,23 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
+from django.contrib import admin
+from home import views
 from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
-from django.contrib import admin
-from accounts import views as accounts_views
-from home import views as home_views
 from products import views as product_views
+from accounts.views import register, profile, login, logout
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^$', views.get_index),
 
-    url(r'^$', home_views.get_index, name='index'),
-    url(r'^register/$', accounts_views.register, name='register'),
-    url(r'^profile/$', accounts_views.profile, name='profile'),
-    url(r'^login/$', accounts_views.login, name='login'),
-    url(r'^logout/$', accounts_views.logout, name='logout')
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^register/$', register, name='register'),
+    url(r'^profile/$', profile, name='profile'),
+    url(r'^login/$', login, name='login'),
+    url(r'^logout/$', logout, name='logout'),
 
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^paypal-return', paypal_views.paypal_return),
