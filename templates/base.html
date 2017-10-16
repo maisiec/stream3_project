@@ -8,28 +8,34 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/revealer.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/revealer.css' %}"/>
+		<script>document.documentElement.className = 'js';</script>
 </head>
 <body>
 <div class="container">
 	<div class="masthead">
+		<svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg>
+		
 		<ul class="nav nav-pills pull-right">
 			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="#">Shop</a></li>
-			<li><a href="#">Blog</a></li>
 			<li><a href="#">Contact</a></li>
 			<li><a href="/products/">Products</a></li>
 			{% if user.is_authenticated %}
               <li><a href="{% url 'profile' %}">Profile</a></li>
               <li><a href="{%  url 'logout'  %}">Log Out</a></li>
-           {% else %}
+            {% else %}
               <li><a href="{%  url 'register'  %}">Register</a></li>
               <li><a href="{%  url 'login'  %}">Log In</a></li>
             {% endif %}
-		</ul>
-		<h1><span class="fui-settings-16 muted">Base Site</span></h1>
+		</ul> 
+
 </div>
-<hr>
+
 <div class="container">
        {% block content %}
        {% endblock %}
@@ -41,5 +47,20 @@
 <!-- script references -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/revealer.js"></script>
+<script src="js/demo.js"></script>
+	<script>
+		{
+			const DOM = {};
+			DOM.body = document.body;
+			DOM.gridElems = Array.from(document.querySelectorAll('.grid'));
+			
+			imagesLoaded(DOM.body, {background: true} , () => {
+				DOM.body.classList.remove('loading');
+				new Slideshow(DOM.gridElems);
+			});
+		}
+	</script>
 </body>
 </html>

@@ -26,8 +26,9 @@ SECRET_KEY = 'tu1*p@11^)2_lr9hrgmm%3z(-plrn&956af(%^fhcae3-$f%dx'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','http://c1fc14b2.ngrok.io']
-
 SITE_ID = 2
+INTERNAL_IPS = ('127.0.0.1',)
+
 
 
 # Application definition
