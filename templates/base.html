@@ -17,7 +17,7 @@
 	<div class="masthead">
 		<svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg>
 		
-		<ul class="nav nav-pills pull-right">
+		<ul class="nav navbar-nav navbar-right nav-effect">
 			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="#">Contact</a></li>
@@ -30,34 +30,18 @@
               <li><a href="{%  url 'login'  %}">Log In</a></li>
             {% endif %}
 		</ul> 
-
 </div>
 
 <div class="container">
        {% block content %}
        {% endblock %}
    </div>
-   <hr>
+  
    <div class="footer">
        
    </div>
 <!-- script references -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/revealer.js"></script>
-<script src="js/demo.js"></script>
-	<script>
-		{
-			const DOM = {};
-			DOM.body = document.body;
-			DOM.gridElems = Array.from(document.querySelectorAll('.grid'));
-			
-			imagesLoaded(DOM.body, {background: true} , () => {
-				DOM.body.classList.remove('loading');
-				new Slideshow(DOM.gridElems);
-			});
-		}
-	</script>
 </body>
 </html>
