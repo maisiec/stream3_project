@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
     
+    <div class="container">
             {% for product in products %}
-                <div class="container">
-                    {{ product.name }}<
-                    {{ product.description }}
-                    £{{ product.price }}
-                    {{ product.paypal_form.sandbox }}
-                    {{ product.image }}
-              
+                	<div class="row">
+                		<div class="col">
+                			<h2>{{ product.name }}</h2>
+                			<iframe src="{{ product.video }}"></iframe>
+                			<p>{{ product.description }}</p><p>{{ product.price }}</p>
+                		</div>
+                	</div>
+                </div>
             {% endfor %}
       
 {% endblock %}
