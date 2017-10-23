@@ -20,7 +20,7 @@ from home import views
 from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
 from products import views as product_views
-from accounts.views import register, profile, login, logout
+from accounts.views import register, account, login, logout
 
 
 urlpatterns = [
@@ -29,7 +29,7 @@ urlpatterns = [
 
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^register/$', register, name='register'),
-    url(r'^profile/$', profile, name='profile'),
+    url(r'^account/$', account, name='account'),
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout, name='logout'),
 
