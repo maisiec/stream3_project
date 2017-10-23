@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.static import serve
+from .settings import MEDIA_ROOT
 from home import views
 from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
@@ -25,6 +27,7 @@ from accounts.views import register, account, login, logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     url(r'^$', views.get_index),
 
     url(r'^pages/', include('django.contrib.flatpages.urls')),
