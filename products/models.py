@@ -11,7 +11,7 @@ class Product(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    video = models.FileField(upload_to='static/product_videos/')
+    video = models.FileField(upload_to='product_videos')
 
     @property
     def paypal_form(self):
