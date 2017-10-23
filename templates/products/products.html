@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+
+     <div class="container">
+            {%  for product in products  %}
+                {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+                  <div class="col-md-4">
+                      <h2>{{ product.name }}</h2>
+                      <video controls>
+                                <source src="/media/{{ product.video }}"type="video/mp4"></video>
+                            <p>{{ product.description }}</p><p>£{{ product.price }}</p>
+                  </div><!-- col-md-4 -->
+            {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
+            {%  endfor %}
+         </div><!-- container -->
     
-    <div class="container">
-            {% for product in products %}
-                	<div class="row">
-                		<div class="col">
-                			<h2>{{ product.name }}</h2>
-                			<iframe src="{{ product.video }}"></iframe>
-                			<p>{{ product.description }}</p><p>{{ product.price }}</p>
-                		</div>
-                	</div>
-                </div>
-            {% endfor %}
+       
       
 {% endblock %}
+</div>
