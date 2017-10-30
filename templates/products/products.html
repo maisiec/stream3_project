@@ -8,13 +8,13 @@
                       <h2>{{ product.name }}</h2>
                       <video controls>
                                 <source src="/media/{{ product.video }}"type="video/mp4"></video>
-                            <p>{{ product.description }}</p><p>£{{ product.price }}</p>
+                            <p>{{ product.description }}</p>
+                            <p>£{{ product.price }}</p>
+                            <p>{{ product.paypal_form.sandbox }}</p>
                   </div><!-- col-md-4 -->
             {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
             {%  endfor %}
          </div><!-- container -->
-    
-       
       
 {% endblock %}
 </div>
