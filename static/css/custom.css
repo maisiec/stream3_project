@@ -11,18 +11,6 @@
 body {
 	/* Grid gap */
 	--gap: 10px;
-	/* Color scheme */
-	--body-text: #333;
-	--body-bg: #fff;
-	--link-text: #ef3b3b;
-	--link-text-hover: #333;
-	--grid-name-text: #ef3b3b;
-	--grid-title-text: #ef3b3b;
-	--grid-nav-text: #fff;
-	--grid-nav-bg: #442ef4;
-	--grid-nav-text-hover: #fff;
-	--grid-nav-bg-hover: #1f1f1f;
-	--grid-text: #333;
 	font-family: Helvetica, Arial, sans-serif;
 	min-height: 600px;
 	color: #333;
@@ -46,7 +34,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: #ef3b3b;
+	color: #000;
 	color: var(--link-text);
 	outline: none;
 }
@@ -82,7 +70,9 @@ a:focus {
 }
 
 
-
+h2{
+	color:#000;
+}
 
 /*==================== 
         BASE GRID
