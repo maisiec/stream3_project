@@ -3,3 +3,4 @@ env
 .python
 *.pyc
 .DS_Store
+media
