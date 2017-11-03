@@ -5,8 +5,8 @@
             {%  for product in products  %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
                   <div class="col-md-4">
-                      <h2>{{ product.name }}</h2>
-                      <video controls>
+                      <a href="{{ product.id }}">{{ product.name }}</a>
+                      <video class="product_video" controls>
                                 <source src="/media/{{ product.video }}"type="video/mp4"></video>
                             <p>{{ product.description }}</p>
                             <p>£{{ product.price }}</p>
@@ -17,4 +17,3 @@
          </div><!-- container -->
       
 {% endblock %}
-</div>
