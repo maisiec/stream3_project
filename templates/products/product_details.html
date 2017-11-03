@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col-md-6">
+  <video class="product_video" controls>
+    <source src="/media/{{ product_detail.video }}"type="video/mp4">
+  </video>
+</div>
+
+<div class="col-md-6">
+  <h2>{{ product_detail.name }}</h2>
+  <p>{{ product_detail.description }}</p>
+  <p>{{ product_detail.price }}</p>
+</div>
+
+      
+{% endblock %}
