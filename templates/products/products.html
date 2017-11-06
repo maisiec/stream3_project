@@ -2,18 +2,23 @@
 {% block content %}
 
      <div class="container">
+      <div class="col-md-12">
+        <p>Here you'll find all of our stock footage that you can purchase for you're own personal. All the clips are filmed on a Sony Handycam on Hi 8 tape. Great for nostalgic edits!</p>
+      </div>
             {%  for product in products  %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
                   <div class="col-md-4">
-                      <a href="{{ product.id }}">{{ product.name }}</a>
-                      <video class="product_video" controls>
+                      <video class="product_video">
                                 <source src="/media/{{ product.video }}"type="video/mp4"></video>
-                            <p>{{ product.description }}</p>
+                            <h3><a href="{{ product.id }}">{{ product.name }}</a></h3>
                             <p>£{{ product.price }}</p>
-                            <p>{{ product.paypal_form.sandbox }}</p>
+                            
                   </div><!-- col-md-4 -->
             {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
             {%  endfor %}
          </div><!-- container -->
       
+{% endblock %}
+{% block tail_js %}
+    <script src="/static/js/script.js" type='text/javascript'></script>  
 {% endblock %}
