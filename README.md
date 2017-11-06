@@ -19,10 +19,10 @@ This website is a media hub where users can browse through and purchase old vide
 #Features
 - Landing home page featuring images taken from stock video footage found on the products page. 
 - ability to register an account, login and out.
-
-### Features Left to Implement
 - products page populated with stock footage user can purchase 
-- ability to view each seperate product stock video description and purchase. 
+- ability to view each seperate product stock video description and purchase.
+
+### Features Left to Implement 
 - ability to add products to a cart 
 - about page describing the website purpose.
 - user profile.
