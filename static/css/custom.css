@@ -11,7 +11,7 @@
 body {
 	/* Grid gap */
 	--gap: 10px;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	min-height: 600px;
 	color: #333;
 	color: var(--body-text);
@@ -35,29 +35,29 @@ body {
 a {
 	text-decoration: none;
 	color: #000;
-	color: var(--link-text);
 	outline: none;
+	font-size:1.125em;
 }
 
 a:hover,
 a:focus {
-	color: #333;
-	color: var(--link-text-hover);
+	color: #7F7F7F;
+	text-decoration: none;
 }
 
 .nav-effect{
     margin:auto;
     list-style-type: none;
+    font-weight:bold;
  }
 
 .nav-effect li>a {
 	
 	margin:10px;
-
 }
 
 .nav-effect li > a:hover:nth-child(odd)  {
-	color:--link-text-hover;
+	color:#333;
 	background:none;
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.3s;
     -moz-transition: -moz-transform 0.3s, opacity 0.3s;
@@ -72,6 +72,10 @@ a:focus {
 
 h2{
 	color:#000;
+}
+
+p{
+	font-size: 1.5em;
 }
 
 /*==================== 
