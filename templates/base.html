@@ -22,7 +22,7 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="#">Contact</a></li>
-			<li><a href="/products/">Products</a></li>
+			<li><a href="/products">Products</a></li>
 			{% if user.is_authenticated %}
               <li><a href="{% url 'account' %}">Account</a></li>
               <li><a href="{%  url 'logout'  %}">Log Out</a></li>
@@ -32,7 +32,19 @@
             {% endif %}
 		</ul> 
 </div>
-
+<div id="subheader">
+        <div class="cart">
+            {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                    Your cart: 
+                    <a href="{% url "cart:cart_detail" %}">
+                        {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
+                    </a>
+                {% else %}
+                    Your cart is empty.
+                {% endif %}
+            {% endwith %}
+</div>
 <div class="container">
        {% block content %}
        {% endblock %}
