@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'products',
+    'cart',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -149,3 +150,6 @@ PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+CART_SESSION_ID = 'cart'
