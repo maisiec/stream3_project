@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Media Hub Base</title>
+	<title>{% block title %}Media Hub{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -27,8 +27,8 @@
               <li><a href="{% url 'account' %}">Account</a></li>
               <li><a href="{%  url 'logout'  %}">Log Out</a></li>
             {% else %}
-              <li><a href="{%  url 'register'  %}">Register</a></li>
-              <li><a href="{%  url 'login'  %}">Log In</a></li>
+              <li><a href="{% url 'register' %}">Register</a></li>
+              <li><a href="{% url 'login' %}">Log In</a></li>
             {% endif %}
 		</ul> 
 </div>
