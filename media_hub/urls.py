@@ -27,10 +27,11 @@ from accounts.views import register, account, login, logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     url(r'^$', views.get_index),
     
+    url(r'^cart/', include('cart.urls', namespace='cart')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
 
     #Account URLS
     url(r'^pages/', include('django.contrib.flatpages.urls')),
@@ -45,7 +46,7 @@ urlpatterns = [
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
 
     # Product URLS 
-    url(r'^products/$', product_views.all_products),
+    url(r'^products/$', product_views.all_products, name='products'),
     url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', product_views.product_detail, name='product_detail'),
 
     
