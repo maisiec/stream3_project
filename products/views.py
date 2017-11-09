@@ -14,11 +14,11 @@ def all_products(request):
 # View each product individually
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
-    #cart_product_form = CartAddProductForm()
+    cart_product_form = CartAddProductForm()
     return render(request,
     			"products/detail.html",
-    			{"product": product,})
-                 #"cart_product_form": cart_product_form})
+    			{"product": product,
+                 "cart_product_form": cart_product_form})
                    
 
 def download_page(request):
