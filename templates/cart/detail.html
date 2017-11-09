@@ -11,7 +11,6 @@
         <thead>
             <tr>
                 <th>Product</th>
-                <th>Quantity</th>
                 <th>Remove</th>               
                 <th>Price</th>
             </tr>
@@ -21,16 +20,8 @@
             {% with product=item.product %}
             <tr>
                 <td>{{ product.name }}</td>
-                <td>
-                    <form action="{% url "cart:cart_add" product.id %}" method="post">
-                        
-                        <input type="submit" value="Update">
-                        {% csrf_token %}
-                    </form>
-                </td>
                 <td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>
                 <td class="num">£{{ item.price }}</td>
-                
             </tr>
             {% endwith %}
         {% endfor %}
