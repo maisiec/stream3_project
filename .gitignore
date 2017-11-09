@@ -3,4 +3,5 @@ env
 .python
 *.pyc
 .DS_Store
-media
+media/
+db.sqlite3
