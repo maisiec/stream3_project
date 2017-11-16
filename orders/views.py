@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 from django.core.urlresolvers import reverse
 from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
@@ -18,9 +18,12 @@ def order_create(request):
                                          price=item['price'],)
             # clear the cart
             cart.clear()
-            # launch task to send confirmation email
+            # send confirmation email
             order_created(order.id)
-            return render(request, 'orders/order/created.html', {'order': order})
+            # set the order in the session
+            request.session['order_id'] = order.id
+            # redirect to the payment
+            return redirect(reverse('payment:process'))
     else:
         form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'cart': cart,
