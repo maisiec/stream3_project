@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core.mail import send_mail
 from products.models import Product
 
 # Create your models here.
@@ -21,6 +22,9 @@ class Order (models.Model):
 	def get_total_cost(self):
 		return sum(item.get_cost() for item in self.items.all())
 
+	
+
+
 class OrderItem(models.Model):
 	order = models.ForeignKey(Order, related_name='items')
 	product = models.ForeignKey(Product, related_name='order_items')
@@ -32,3 +36,14 @@ class OrderItem(models.Model):
 
 	def get_cost(self):
 		return self.price * self.quantity
+
+def order_created(order_id):
+		"""
+		Task to send email notification when an order is successfully created
+		"""
+		order = Order.objects.get(id=order_id)
+		subject = 'Order nr.{}'.format(order_id)
+		message = 'Dear {},\n\nYou have successfully placed an order for stock footage. Your order id is {}.'.format(order.first_name, order.id)
+		mail_sent = send_mail(subject, message, "maaisiexx@gmail.com", [order.email])
+		return mail_sent
+
