@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
-from .models import OrderItem
+from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
-from .tasks import order_created
+#from .tasks import order_created
 from cart.cart import Cart
 
 
@@ -19,7 +19,7 @@ def order_create(request):
             # clear the cart
             cart.clear()
             # launch task to send confirmation email
-            order_created.delay(order.id)
+            order_created(order.id)
             return render(request, 'orders/order/created.html', {'order': order})
     else:
         form = OrderCreateForm()
