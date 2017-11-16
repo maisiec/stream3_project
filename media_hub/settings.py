@@ -11,15 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import djcelery
-djcelery.setup_loader()
 
-#Broke Settings
-BROKER_HOST = "localhost"
-BROKER_PORT = 5672
-BROKER_USER = "maisiec"
-BROKER_PASSWORD = "media_hub"
-BROKER_VHOST = "media_hub_vhost"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -167,5 +159,9 @@ MEDIA_URL = '/media/'
 
 CART_SESSION_ID = 'cart'
 
-
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'maaisiexx@gmail.com'
+EMAIL_HOST_PASSWORD = 'qpwoeiruTY1'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
