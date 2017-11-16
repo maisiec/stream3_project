@@ -26,7 +26,7 @@ SECRET_KEY = 'tu1*p@11^)2_lr9hrgmm%3z(-plrn&956af(%^fhcae3-$f%dx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','http://c1fc14b2.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1','https://054e1760.ngrok.io']
 SITE_ID = 2
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'orders',
-    'djcelery'
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -150,7 +149,7 @@ STATICFILES_DIRS = (
 
 # PayPal Settings
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://c1fc14b2.ngrok.io/a-very-hard-to-guess-url/'
+PAYPAL_NOTIFY_URL = 'http://054e1760.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
