@@ -20,7 +20,7 @@ from django.views.static import serve
 from .settings import MEDIA_ROOT
 from home import views
 from paypal.standard.ipn import urls as paypal_urls
-from paypal_store import views as paypal_views
+from payment import views as paypal_views
 from products import views as product_views
 from accounts.views import register, account, login, logout
 
@@ -42,8 +42,7 @@ urlpatterns = [
 
     #Paypal URLS 
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
-    url(r'^paypal-return', paypal_views.paypal_return),
-    url(r'^paypal-cancel', paypal_views.paypal_cancel),
+    url(r'^payment/', include('payment.urls', namespace='payment')),
 
     # Product URLS 
     url(r'^products/$', product_views.all_products, name='products'),
