@@ -15,11 +15,11 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    #def __len__(self):
+    def __len__(self):
         """
         Count all items in the cart.
         """
-     #   return sum(item['quantity'] for item in self.cart.values())
+        return len(self.cart.keys())
 
     def __iter__(self):
         """
