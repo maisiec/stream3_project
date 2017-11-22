@@ -23,7 +23,7 @@ from paypal.standard.ipn import urls as paypal_urls
 from payment import views as paypal_views
 from products import views as product_views
 from accounts.views import register, account, login, logout
-
+from orders import views as order_views 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -47,7 +47,8 @@ urlpatterns = [
     # Product URLS 
     url(r'^products/$', product_views.all_products, name='products'),
     url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', product_views.product_detail, name='product_detail'),
-
+    url(r'^download/(?P<id>\d+)/$', order_views.download, name='download'), # view a purchase
+    #url(r'^purchased/(?P<uid>\d+)/(?P<id>\d+)/$', 'products.views.purchased' ), # purchase callback
     
 ]
 
