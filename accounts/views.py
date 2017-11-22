@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.http import HttpResponse
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, render_to_response, redirect, get_object_or_404
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from accounts.forms import UserRegistrationForm, UserLoginForm
- 
+from orders.models import Purchase
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -18,7 +24,7 @@ def register(request):
  
             if user:
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('profile'))
+                return redirect(reverse('account'))
  
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -33,7 +39,7 @@ def register(request):
 
 @login_required(login_url='/login/')
 def account(request):
-    return render(request, 'account.html')
+    return render_to_response('account.html', {'list': orders.models.Purchase.objects.filter( purchaser=request.user)} )
 
 def login(request):
     if request.method == 'POST':
@@ -45,7 +51,7 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 messages.error(request, "You have successfully logged in")
-                return redirect(reverse('profile'))
+                return redirect(reverse('account'))
             else:
                 form.add_error(None, "Your email or password was not recognised")
  
