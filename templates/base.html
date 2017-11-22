@@ -10,32 +10,33 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 	
 	
 </head>
 <body>
 	<div class="masthead">
-		<a href="/"><svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg></a>
+		<a id="brand" href="/"><svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg></a>
 		
 		<ul class="nav navbar-nav navbar-right nav-effect">
-			<li><a href="/">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-			<li><a href="/products">Products</a></li>
+			<li><a class="navlink" href="/">Home</a></li>
+			<li><a class="navlink" href="#">About</a></li>
+			<li><a class="navlink" href="#">Contact</a></li>
+			<li><a class="navlink" href="/products">Products</a></li>
 			{% if user.is_authenticated %}
-              <li><a href="{% url 'account' %}">Account</a></li>
-              <li><a href="{%  url 'logout'  %}">Log Out</a></li>
+              <li><a class="navlink" href="{% url 'account' %}">Account</a></li>
+              <li><a class="navlink" href="{%  url 'logout'  %}">Log Out</a></li>
             {% else %}
-              <li><a href="{% url 'register' %}">Register</a></li>
-              <li><a href="{% url 'login' %}">Log In</a></li>
+              <li><a class="navlink" href="{% url 'register' %}">Register</a></li>
+              <li><a class="navlink" href="{% url 'login' %}">Log In</a></li>
       {% endif %} 
       {% with total_items=cart|length %}
                 {% if cart|length > 0 %}
-                <li><a href="{% url "cart:cart_detail" %}">
+                <li><a class="navlink" href="{% url "cart:cart_detail" %}">
                       Cart({{ total_items }})
                       </a></li>
                 {% else %}
-                    <li><a href="/">Cart(0)</a></li>
+                    <li><a class="navlink" href="/">Cart(0)</a></li>
                 {% endif %}
             {% endwith %} 
     </ul>
