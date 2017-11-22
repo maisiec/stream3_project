@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+  Download Page
+{% endblock %}
+
+{% block content %}
+
+<p>You have successfully purchased <b>{{ product.name }}</b></p>
+<p><a href="/download/{{ product.id }}/">Download Now</a></p>
+
+{% endblock %}
