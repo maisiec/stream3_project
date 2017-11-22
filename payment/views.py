@@ -10,7 +10,7 @@ from django.apps import AppConfig
 # Create your views here.
 @csrf_exempt
 def payment_done(request):
-    return render(request, 'payment/done.html')
+    return render(request, 'payment/done.html' )
 
 
 @csrf_exempt
