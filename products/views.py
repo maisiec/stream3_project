@@ -24,9 +24,9 @@ def product_detail(request, id, slug):
                    
 
 #def download_page(request):
-       ''' The page that you arrive back to from a succesful purchase'''
+ #      ''' The page that you arrive back to from a succesful purchase'''
        #return render(request, "products/download.html", {"products":products})
 
 #def download_link(request):
-       ''' '''
+   #    ''' '''
       #return 
