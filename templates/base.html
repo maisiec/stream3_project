@@ -14,7 +14,6 @@
 	
 </head>
 <body>
-<div class="container">
 	<div class="masthead">
 		<a href="/"><svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg></a>
 		
@@ -29,23 +28,20 @@
             {% else %}
               <li><a href="{% url 'register' %}">Register</a></li>
               <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
-		</ul> 
-</div>
-<div id="subheader">
-        <div class="cart">
-            {% with total_items=cart|length %}
+      {% endif %} 
+      {% with total_items=cart|length %}
                 {% if cart|length > 0 %}
-                    Your cart: 
-                    <a href="{% url "cart:cart_detail" %}">
-                        {{ total_items }} item{{ total_items|pluralize }}, £{{ cart.get_total_price }}
-                    </a>
+                <li><a href="{% url "cart:cart_detail" %}">
+                      Cart({{ total_items }})
+                      </a></li>
                 {% else %}
-                    Your cart is empty.
+                    <li><a href="/">Cart(0)</a></li>
                 {% endif %}
-            {% endwith %}
-        </div>
-    </div>
+            {% endwith %} 
+    </ul>
+</div>
+
+
 <div class="container">
        {% block content %}
        {% endblock %}
