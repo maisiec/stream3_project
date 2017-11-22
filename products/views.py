@@ -4,6 +4,8 @@ from .models import Product
 from cart.forms import CartAddProductForm
 
 
+
+
 # Create your views here.
 
 # View all products
@@ -21,12 +23,10 @@ def product_detail(request, id, slug):
                  "cart_product_form": cart_product_form})
                    
 
-def download_page(request):
-	''' The page that you arrive back to from a succesful purchase'''
-	return render(request, "products/download.html", {"products":products})
+#def download_page(request):
+       ''' The page that you arrive back to from a succesful purchase'''
+       #return render(request, "products/download.html", {"products":products})
 
-def download_link(request):
-	''' '''
-	return 
-
-
+#def download_link(request):
+       ''' '''
+      #return 
