@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <h2>Success!</h2>
-    <p>You are logged in as {{user.email}} and you recently logged in at {{user.last_login}}. </p>
+    <p>You are logged in as {{user.email}} and you recently logged in at {{user.last_login}}.
+    <a href="/logout/">Logout</a></p>
+
+    <h2>Purchases</h2>
+    <ul>
+    	{% for item in list %}
+    	<li><a href="/download/{{item.product.id}}/">{{ item.product.name }} - £{{ item.product.price }}</a></li>
+    	{% endfor %}
+    </ul>
 {% endblock %}
