@@ -7,9 +7,10 @@
 {% block content %}
 
      <div class="container">
-      <div class="col-md-12">
+      <div class="col-md-12 page_description">
         <p>Here you'll find all of our stock footage that you can purchase for you're own personal. All the clips are filmed on a Sony Handycam on Hi 8 tape. Great for nostalgic edits!</p>
       </div>
+      <div class="col-md-12"> 
             {%  for product in products  %}
                 {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
                   <div class="col-md-4">
@@ -22,7 +23,7 @@
             {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
             {%  endfor %}
          </div><!-- container -->
-      
+      </div> 
 {% endblock %}
 {% block tail_js %}
     <script src="/static/js/script.js" type='text/javascript'></script>  
