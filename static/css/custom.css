@@ -11,17 +11,36 @@
 body {
 	/* Grid gap */
 	--gap: 10px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Fakt Light', 'Roboto';
 	min-height: 600px;
-	color: #333;
-	color: var(--body-text);
-	background: #ccd8e4;
-	background: var(--body-bg);
+	color: #000;
+	background: #fff;
 	line-height:1;
 }
 
-#wayvdLogo{
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #4c4c4c;
+}
+
+::selection {
+    color: #fff;
+    background: #4c4c4c;
+}
+
+#wayvdLogo {
 	margin:10px;
+	text-decoration
+}
+
+#brand:hover {
+	border-bottom:none;
+}
+
+#brand::selection {
+	border-bottom:none;
+	color:none;
+	background: none;
 }
 
 .container{
@@ -41,6 +60,13 @@ a {
 
 a:hover,
 a:focus {
+	color: #7F7F7F;
+	text-decoration: none;
+	
+}
+
+.navlink:hover,
+.navlink:focus {
 	color: #7F7F7F;
 	text-decoration: none;
 	border-bottom:1px solid #000;
@@ -86,13 +112,79 @@ hr {
 	width:100%;
 }
 
-hr:after {
-	content:"\a7\a7";
-	font-size:1.25em;
-}
 
 .row{
 	margin-top:20px;
+}
+
+/*==================== 
+        FORMS 
+======================*/
+
+.form-wrap {
+   	margin: auto;
+    width: 33.3%;
+    padding: 10px;
+}
+
+.login-form{
+	font-size: 150%;
+	
+}
+
+.form-control {
+	padding: 0.85em 1.5em;
+	width: 100%;
+	border-radius: 2em;
+	background: #fff;
+	color: #535d92;
+}
+
+label.control-label{
+	float:left;
+	text-align:left;
+	width:25%;
+	height:46px;
+	line-height:46px;
+	text-transform:uppercase;
+	}
+
+h1.border-bottom{
+    border-bottom: 1px #000 solid;
+    margin-bottom: 2em;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.25em
+}
+
+.control-label::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background: rgba(11, 43, 205, 0.6);
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	pointer-events: none;
+}
+
+
+.form-control:focus,
+.form-control:focus +  .control-label {
+	z-index: 10000;
+}
+
+.form-control:focus + .control-label {
+	color: #fff;
+}
+
+.form-control + .control-label::after {
+	opacity: 1;
 }
 /*==================== 
         BASE GRID
@@ -272,6 +364,7 @@ form p input {
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
+
 
 
 /*==================== 
