@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect, get_list_or_404
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
-#from .tasks import order_created
 from cart.cart import Cart
+from accounts.models import User
 
 
 def order_create(request):
@@ -28,3 +30,26 @@ def order_create(request):
         form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'cart': cart,
                                                         'form': form})
+
+@login_required
+def download(request, id):
+    ''''''
+    product = get_object_or_404(models.Product, pk=id)
+    try:
+        #purchased = models.Purchase.objects.get( product=product, purchaser=request.user)
+        f = open( settings.RESOURCES_DIR, "r")
+        data = f.read()
+        f.close ()
+        # return items as file
+        response = HttpResponse(data)
+        response['Content-Disposition'] = 'attchment; filename=%s' 
+        return response
+    except models.Purchase.DoesNotExist: 
+        return render_to_response("cart/detail.html", {"products":products})
+
+        path_to_file = os.path.realpath("random.xls")
+        f = open(path_to_file, 'r')
+        myfile = File(f)
+        response = HttpResponse(myfile, content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = 'attachment; filename=' + name
+        return response
