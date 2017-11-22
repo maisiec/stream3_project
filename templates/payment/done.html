@@ -4,5 +4,11 @@
 {% block content %}
 	<h1>Your payment was successful</h1>
 	<p>Your payment has been succesfully recieved. Thank you!</p>
-	{{ form.render }}
+
+<h1>Downloads</h1>
+{% for item in list %}
+	
+<li><a href="/download/{{ item.product.id }}/">{{ item.product.name }} - £{{ item.product.price }}</a></li>
+
+{% endfor %}
 {% endblock %}
