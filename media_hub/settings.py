@@ -148,6 +148,7 @@ STATICFILES_DIRS = (
 )
 
 # PayPal Settings
+RESOURCES_DIR = 'media/product_videos/'
 SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'http://054e1760.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
