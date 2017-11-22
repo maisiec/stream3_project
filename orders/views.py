@@ -42,14 +42,9 @@ def download(request, id):
         f.close ()
         # return items as file
         response = HttpResponse(data)
-        response['Content-Disposition'] = 'attchment; filename=%s' 
+        response['Content-Disposition'] = 'attachment; filename=%s' 
         return response
     except models.Purchase.DoesNotExist: 
         return render_to_response("cart/detail.html", {"products":products})
 
-        path_to_file = os.path.realpath("random.xls")
-        f = open(path_to_file, 'r')
-        myfile = File(f)
-        response = HttpResponse(myfile, content_type='application/vnd.ms-excel')
-        response['Content-Disposition'] = 'attachment; filename=' + name
-        return response
+    
