@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.mail import send_mail
 from products.models import Product
+from accounts.models import User
 
 # Create your models here.
 class Order (models.Model):
@@ -46,4 +47,14 @@ def order_created(order_id):
 		message = 'Dear {},\n\nYou have successfully placed an order for stock footage. Your order id is {}.'.format(order.first_name, order.id)
 		mail_sent = send_mail(subject, message, "maaisiexx@gmail.com", [order.email])
 		return mail_sent
+
+class Purchase(models.Model):
+    '''
+    Purchases
+    '''
+    product = models.ForeignKey(Product)
+    purchaser = models.ForeignKey(User)
+    purchased_at = models.DateTimeField(auto_now_add=True)
+    
+
 
