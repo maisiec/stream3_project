@@ -43,6 +43,7 @@ a:hover,
 a:focus {
 	color: #7F7F7F;
 	text-decoration: none;
+	border-bottom:1px solid #000;
 }
 
 .nav-effect{
@@ -68,9 +69,31 @@ h2{
 }
 
 p{
-	font-size: 1.5em;
+	font-size: 1.2em;
+	padding-top:20px;
+	padding-bottom:20px;
+	line-height:25px;
 }
 
+hr {
+	background-color:#444;
+	color:#444;
+	height:2px;
+	line-height:0;
+	margin:-.5em 10px 1.8571em 10px;
+	page-break-after:always;
+	text-align:center;
+	width:100%;
+}
+
+hr:after {
+	content:"\a7\a7";
+	font-size:1.25em;
+}
+
+.row{
+	margin-top:20px;
+}
 /*==================== 
         BASE GRID
 ======================*/
@@ -243,6 +266,14 @@ form p input {
     color:#666;
     border-radius:4px;
 }
+
+
+.page_description {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+
 /*==================== 
     MEDIA QUERIES
 ======================*/
