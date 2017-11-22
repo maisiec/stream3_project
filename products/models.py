@@ -5,6 +5,7 @@ from django_extensions.db.fields import AutoSlugField
 from paypal.standard.forms import PayPalPaymentsForm
 from django.core.urlresolvers import reverse
 
+
 # Create your models here.
 # class ProductTag(models.Model):
 #     '''
