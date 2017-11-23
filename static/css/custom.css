@@ -11,7 +11,7 @@
 body {
 	/* Grid gap */
 	--gap: 10px;
-	font-family: 'Fakt Light', 'Roboto';
+	font-family: 'Fakt Normal', 'Roboto';
 	min-height: 600px;
 	color: #000;
 	background: #fff;
@@ -121,6 +121,8 @@ hr {
         FORMS 
 ======================*/
 
+
+
 .form-wrap {
    	margin: auto;
     width: 33.3%;
@@ -148,7 +150,9 @@ hr {
 }
 
 #id_email:valid,
-#id_password:valid{   
+#id_password:valid,
+#id_password1:valid,
+#id_password2:valid{   
 	background-color:#F9FFB0;
 	outline: 0 none;
 	border: 1px #000 solid;
@@ -159,7 +163,9 @@ hr {
 }
 
 #id_email:focus,
-#id_password:focus{
+#id_password:focus,
+#id_password1:focus,
+#id_password2:focus{
 	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
