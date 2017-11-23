@@ -135,18 +135,10 @@ hr {
 .form-control {
 	background-color: #fff;
     margin-bottom: 28px;
-	padding: 0.85em 1.5em;
-	width: 75%;
-	display:block;
-    max-width: none;
-	background: #fff;
-	color: #535d92;
-	float:right;
-	line-height: 46px;
+	background: #fffl
     padding: 0 12px;
     font-size: 1em;
     color: #000;
-    vertical-align: middle;
     border: 1px #000 solid;
     border-radius: 0px;
     -webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
@@ -155,49 +147,55 @@ hr {
     
 }
 
-input :before, :after{
-	box-sizing: border-box;
+#id_email:valid,
+#id_password:valid{   
+	background-color:#F9FFB0;
+	outline: 0 none;
+	border: 1px #000 solid;
+	border-radius: 0px;
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);   
 }
 
-input{
-	-webkit-appearance: textfield;
-	-webkit-rtl-ordering: logical;
-    user-select: text;
+#id_email:focus,
+#id_password:focus{
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
 }
 
-input, textarea, select, button{
-	    text-rendering: auto;
-	    letter-spacing: normal;
-    	word-spacing: normal;
-    	text-transform: none;
-    	text-indent: 0px;
-    	text-shadow: none;
-    	display: inline-block;
-    	text-align: start;
-    	margin: 0em;
-    	font: 11px system-ui;
 
-}
+
 label.control-label{
-	float:left;
-	text-align:left;
-	width:25%;
-	line-height:50px;
 	text-transform:uppercase;
-	font-size: 1em
 	}
 
 label{
 	margin-bottom: inherit;
 }
 
-h1.border-bottom{
+legend.border-bottom{
     border-bottom: 1px #000 solid;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     padding-bottom: 16px;
     text-transform: uppercase;
     text-align: left;
-    font-size: 1.25em
+    font-size: 1.5em;
+    color: #000;
+}
+
+.btn{
+	background-color:#000;
+	border: solid #000;
+	border-radius:0;
+	border:1px solid #000
+}
+
+.btn:hover{
+	background-color:#fff;
+	color:#000;
+	border:1px solid #000
 }
 /*==================== 
         BASE GRID
@@ -454,6 +452,8 @@ video {
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-
+.form-wrap{
+	width:100%;
+}
        
 }
