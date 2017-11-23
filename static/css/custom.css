@@ -90,7 +90,7 @@ a:focus {
 }
 
 
-h2{
+h2, h1{
 	color:#000;
 }
 
@@ -128,26 +128,68 @@ hr {
 }
 
 .login-form{
-	font-size: 150%;
+	font-size: 120%;
 	
 }
 
 .form-control {
+	background-color: #fff;
+    margin-bottom: 28px;
 	padding: 0.85em 1.5em;
-	width: 100%;
-	border-radius: 2em;
+	width: 75%;
+	display:block;
+    max-width: none;
 	background: #fff;
 	color: #535d92;
+	float:right;
+	line-height: 46px;
+    padding: 0 12px;
+    font-size: 1em;
+    color: #000;
+    vertical-align: middle;
+    border: 1px #000 solid;
+    border-radius: 0px;
+    -webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    
 }
 
+input :before, :after{
+	box-sizing: border-box;
+}
+
+input{
+	-webkit-appearance: textfield;
+	-webkit-rtl-ordering: logical;
+    user-select: text;
+}
+
+input, textarea, select, button{
+	    text-rendering: auto;
+	    letter-spacing: normal;
+    	word-spacing: normal;
+    	text-transform: none;
+    	text-indent: 0px;
+    	text-shadow: none;
+    	display: inline-block;
+    	text-align: start;
+    	margin: 0em;
+    	font: 11px system-ui;
+
+}
 label.control-label{
 	float:left;
 	text-align:left;
 	width:25%;
-	height:46px;
-	line-height:46px;
+	line-height:50px;
 	text-transform:uppercase;
+	font-size: 1em
 	}
+
+label{
+	margin-bottom: inherit;
+}
 
 h1.border-bottom{
     border-bottom: 1px #000 solid;
@@ -156,35 +198,6 @@ h1.border-bottom{
     text-transform: uppercase;
     text-align: left;
     font-size: 1.25em
-}
-
-.control-label::after {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	width: 100%;
-	height: 100%;
-	background: rgba(11, 43, 205, 0.6);
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-	pointer-events: none;
-}
-
-
-.form-control:focus,
-.form-control:focus +  .control-label {
-	z-index: 10000;
-}
-
-.form-control:focus + .control-label {
-	color: #fff;
-}
-
-.form-control + .control-label::after {
-	opacity: 1;
 }
 /*==================== 
         BASE GRID
