@@ -186,10 +186,11 @@ legend.border-bottom{
 }
 
 .btn{
+	background:none;
 	background-color:#000;
 	border: solid #000;
 	border-radius:0;
-	border:1px solid #000
+	border:1px solid #000;
 }
 
 .btn:hover{
