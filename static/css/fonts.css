@@ -1,29 +1,29 @@
 @font-face {
 	font-family: 'Fakt Air';
-	src: url('fonts/FaktPro-Air.eot');
-	src: url('fonts/FaktPro-Air.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/FaktPro-Air.woff') format('woff'),
-	     url('fonts/FaktPro-Air.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Air.eot');
+	src: url('/staticfonts/FaktPro-Air.eot?#iefix') format('embedded-opentype'),
+	     url('/staticfonts/FaktPro-Air.woff') format('woff'),
+	     url('/staticfonts/FaktPro-Air.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Fakt Hair';
-	src: url('/fonts/FaktPro-Hair.eot');
-	src: url('/fonts/FaktPro-Hair.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Hair.woff') format('woff'),
-	     url('/fonts/FaktPro-Hair.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Hair.eot');
+	src: url('/static/fonts/FaktPro-Hair.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Hair.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Hair.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Fakt Thin';
-	src: url('/fonts/FaktPro-Thin.eot');
-	src: url('/fonts/FaktPro-Thin.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Thin.woff') format('woff'),
-	     url('/fonts/FaktPro-Thin.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Thin.eot');
+	src: url('/static/fonts/FaktPro-Thin.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Thin.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Thin.ttf') format('truetype');
 	font-weight: 100;
 	font-style: normal;
 }
@@ -32,10 +32,10 @@
 
 @font-face {
 	font-family: 'Fakt Light';
-	src: url('/fonts/FaktPro-Light.eot');
-	src: url('/fonts/FaktPro-Light.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Light.woff') format('woff'),
-	     url('/fonts/FaktPro-Light.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Light.eot');
+	src: url('/static/fonts/FaktPro-Light.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Light.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Light.ttf') format('truetype');
 	font-weight: 200;
 	font-style: normal;
 }
@@ -43,40 +43,40 @@
 
 @font-face {
 	font-family: 'Fakt Blond';
-	src: url('/fonts/FaktPro-Blond.eot');
-	src: url('/fonts/FaktPro-Blond.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Blond.woff') format('woff'),
-	     url('/fonts/FaktPro-Blond.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Blond.eot');
+	src: url('/static/fonts/FaktPro-Blond.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Blond.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Blond.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Fakt Normal';
-	src: url('/fonts/FaktPro-Normal.eot');
-	src: url('/fonts/FaktPro-Normal.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Normal.woff') format('woff'),
-	     url('/fonts/FaktPro-Normal.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Normal.eot');
+	src: url('/static/fonts/FaktPro-Normal.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Normal.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Normal.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Fakt Medium';
-	src: url('/fonts/FaktPro-Medium.eot');
-	src: url('/fonts/FaktPro-Medium.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-Medium.woff') format('woff'),
-	     url('/fonts/FaktPro-Medium.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-Medium.eot');
+	src: url('/static/fonts/FaktPro-Medium.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-Medium.woff') format('woff'),
+	     url('/static/fonts/FaktPro-Medium.ttf') format('truetype');
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Fakt Semi Bold';
-	src: url('/fonts/FaktPro-SemiBold.eot');
-	src: url('/fonts/FaktPro-SemiBold.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/FaktPro-SemiBold.woff') format('woff'),
-	     url('/fonts/FaktPro-SemiBold.ttf') format('truetype');
+	src: url('/static/fonts/FaktPro-SemiBold.eot');
+	src: url('/static/fonts/FaktPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+	     url('/static/fonts/FaktPro-SemiBold.woff') format('woff'),
+	     url('/static/fonts/FaktPro-SemiBold.ttf') format('truetype');
 	font-weight: 600;
 	font-style: normal;
 }
