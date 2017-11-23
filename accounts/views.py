@@ -11,7 +11,7 @@ from django.shortcuts import render, render_to_response, redirect, get_object_or
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from accounts.forms import UserRegistrationForm, UserLoginForm
-from orders.models import Purchase
+from orders.models import Purchase, Order
 
 def register(request):
     if request.method == 'POST':
@@ -39,7 +39,8 @@ def register(request):
 
 @login_required(login_url='/login/')
 def account(request):
-    return render_to_response('account.html', {'list': orders.models.Purchase.objects.filter( purchaser=request.user)} )
+    return render(request'account.html', {'orders': Order.objects.filter(user=request.user)[:5]
+        })
 
 def login(request):
     if request.method == 'POST':
