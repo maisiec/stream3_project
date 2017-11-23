@@ -48,7 +48,7 @@ urlpatterns = [
     url(r'^products/$', product_views.all_products, name='products'),
     url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', product_views.product_detail, name='product_detail'),
     url(r'^download/(?P<id>\d+)/$', order_views.download, name='download'), # view a purchase
-    #url(r'^purchased/(?P<uid>\d+)/(?P<id>\d+)/$', 'products.views.purchased' ), # purchase callback
+    
     
 ]
 
