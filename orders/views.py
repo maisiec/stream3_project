@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.http import HttpResponse
 from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
+from products.models import Product
 from cart.cart import Cart
 from accounts.models import User
 
@@ -32,19 +34,26 @@ def order_create(request):
                                                         'form': form})
 
 @login_required
+def order_list(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, 'orders/list.html', {orders: orders})
+
+
+@login_required
+def order_detail(request, id):
+    order = get_object_or_404(Order, user=request.user, pk=id)
+    return render(request, 'orders/detail.html', {
+        'order': order
+    })
+
+
+@login_required
 def download(request, id):
     ''''''
-    product = get_object_or_404(models.Product, pk=id)
-    try:
-        #purchased = models.Purchase.objects.get( product=product, purchaser=request.user)
-        f = open( settings.RESOURCES_DIR, "r")
-        data = f.read()
-        f.close ()
-        # return items as file
-        response = HttpResponse(data)
-        response['Content-Disposition'] = 'attachment; filename=%s' 
-        return response
-    except models.Purchase.DoesNotExist: 
-        return render_to_response("cart/detail.html", {"products":products})
+    obj = get_object_or_404(Product, pk=id)
+    filename = obj.video.name.split('/')[-1]
+    response = HttpResponse(obj.video, "video/mp4")
+    response['Content-Disposition'] = 'attachment; filename={}'.format(filename)
+    return response
 
     
