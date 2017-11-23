@@ -11,7 +11,7 @@
 body {
 	/* Grid gap */
 	--gap: 10px;
-	font-family: 'Fakt Normal', 'Roboto';
+	font-family: 'Fakt Normal','Roboto', Helvetica, sans-serif;
 	min-height: 600px;
 	color: #000;
 	background: #fff;
