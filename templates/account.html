@@ -4,10 +4,11 @@
     <p>You are logged in as {{user.email}} and you recently logged in at {{user.last_login}}.
     <a href="/logout/">Logout</a></p>
 
-    <h2>Purchases</h2>
+    <h2>Last 5 Orders</h2>
     <ul>
-    	{% for item in list %}
-    	<li><a href="/download/{{item.product.id}}/">{{ item.product.name }} - £{{ item.product.price }}</a></li>
+    	{% for order in orders %}
+    	<li><a href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></li>
     	{% endfor %}
     </ul>
+    <p><a href="{% url 'orders:list' %}">See All Orders</a></p>
 {% endblock %}
