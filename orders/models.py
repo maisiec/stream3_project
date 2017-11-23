@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.conf import settings
 from django.core.mail import send_mail
 from products.models import Product
-from accounts.models import User
+
 
 # Create your models here.
 class Order (models.Model):
@@ -13,6 +14,7 @@ class Order (models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	paid = models.BooleanField(default=False)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
 	class Meta:
 		ordering = ('-created',)
@@ -22,9 +24,6 @@ class Order (models.Model):
 
 	def get_total_cost(self):
 		return sum(item.get_cost() for item in self.items.all())
-
-	
-
 
 class OrderItem(models.Model):
 	order = models.ForeignKey(Order, related_name='items')
@@ -53,7 +52,7 @@ class Purchase(models.Model):
     Purchases
     '''
     product = models.ForeignKey(Product)
-    purchaser = models.ForeignKey(User)
+    purchaser = models.ForeignKey(settings.AUTH_USER_MODEL)
     purchased_at = models.DateTimeField(auto_now_add=True)
     
 
