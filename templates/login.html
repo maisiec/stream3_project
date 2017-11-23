@@ -2,13 +2,14 @@
 {% load bootstrap_tags %}
 {% block content %}
 <div class=form-wrap>
-	<h1 class="border-bottom">Login</h1>
+	<legend class="border-bottom">Login</legend>
     <form class="login-form" role="form" method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form| as_bootstrap }}
         <div class="form-group">
+        	<button type="submit" class="btn btn-primary">Login</button>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        
     </form>
 </div>
 {% endblock %}
