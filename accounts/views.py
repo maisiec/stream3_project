@@ -39,8 +39,9 @@ def register(request):
 
 @login_required(login_url='/login/')
 def account(request):
-    return render(request'account.html', {'orders': Order.objects.filter(user=request.user)[:5]
-        })
+    return render(request, 'account.html', {
+       'orders': Order.objects.filter(user=request.user)[:5]
+   })
 
 def login(request):
     if request.method == 'POST':
