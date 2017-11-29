@@ -326,9 +326,6 @@ table th, table td {
     margin:0;
 }
 
-tbody tr:nth-child(odd) {
-    background:#efefef;
-}
 
 tbody tr.subtotal {
     background:#ccc;
@@ -354,6 +351,22 @@ tbody td.num {
 td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
+}
+
+.link-box{
+	padding:5px;
+	border: 1px solid #000;
+}
+
+.link-box:hover{
+	padding:5px;
+	border: 1px solid #000;
+	background:#000;
+	color:#fff;
+}
+
+.page-border-bot{
+	border-bottom:1px solid #000;
 }
 
 form p label, form p input {
@@ -382,6 +395,8 @@ form p input {
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
+
+
 
 
 
