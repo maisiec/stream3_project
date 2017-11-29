@@ -2,10 +2,10 @@
 {% block content %}
 <div class="page-border-bot">
     <h2 class="border-bottom">All Your Orders</h2>
-    <ul>
-    <table class="orders">
+    <ul class="orders">
+    <table>
         <thead>
-            <tr>
+            <tr class="border-bottom">
                 <th>Order</th>
                 <th>Date</th>               
                 <th>Total</th>
@@ -14,7 +14,7 @@
         <tbody>
         {% for order in orders %}
             <tr>
-                <td><a class="order-link" href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
+                <td><a class="link-box" href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
                 <td>{{ order.created }}</td>
                 <td>£{{ order.get_total_cost }}</td>
             </tr>
@@ -22,4 +22,5 @@
         </tbody>
     </table>
  </div>
+ <p><a class="link-box" href="{% url 'account' %}">Return to account</a></p>
 {% endblock %}
