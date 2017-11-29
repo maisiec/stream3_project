@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>All Your Orders</h2>
-    
+<div class="page-border-bot">
+    <h2 class="border-bottom">All Your Orders</h2>
+    <ul>
+    <table class="orders">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Date</th>               
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td><a class="order-link" href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
+                <td>{{ order.created }}</td>
+                <td>£{{ order.get_total_cost }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="page-border-bot">
     <h2 class="border-bottom">Sup!</h2>
     <p>You are logged in as {{ user.email }}. You recently logged in at {{user.last_login}} You can logout <a href="/logout/">here</a></p>
 
@@ -16,12 +17,13 @@
         <tbody>
         {% for order in orders %}
             <tr>
-                <td><a href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
+                <td><a class="link-box" href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
                 <td>{{ order.created }}</td>
                 <td>£{{ order.get_total_cost }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <p><a href="{% url 'orders:list' %}">See All Orders</a></p>
+</div>
+<p><a class="link-box" href="{% url 'orders:list' %}">See All Orders</a></p>
 {% endblock %}
