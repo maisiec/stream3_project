@@ -5,21 +5,39 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Checkout</h1>
+<div class="col-md-6">
+    <h1 class="border-bottom">Checkout</h1>
+<ul class="orders">
+    <table>
+        <thead>
+            <tr class="border-bottom">
+                <th>Product</th>              
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+            
+            <tr>
+                <td>{{ item.product.name }} </td>
+                <td>£{{ item.price }}</td>
+            </tr>
+        {% endfor %}
+        <tr class="border-top total">
+            <td>Total</td>
+            <td colspan="4">{{ cart.get_total_price }}</td>
+        </tr>
+        </tbody>
+    </table>
+</ul>
+</div>
 
-	<div class="order-info">
-		<h3>Your order</h3>
-		<ul>
-			{% for item in cart %}
-				<li>{{ item.product.name }} <span>£{{ item.price }}</span></li>
-			{% endfor %}
-		</ul>
-		<p>Total: £{{ cart.get_total_price }}</p>
-	</div>
-
+	
+	<div class="form-wrap col-md-6">
 	<form action="." method="post" class="order-form">
 		{{ form.as_p }}
-		<p><input type="submit" value="Place order"></p>
+		<p><input class="btn" type="submit" value="Place order"></p>
 		{% csrf_token %}
 	</form>
+</div>
 {% endblock %}
