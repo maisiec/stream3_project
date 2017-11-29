@@ -197,6 +197,7 @@ label{
 	border: solid #000;
 	border-radius:0;
 	border:1px solid #000;
+	color:#fff;
 }
 
 .btn:hover{
@@ -338,6 +339,7 @@ thead th, tbody tr.total {
 
 table.cart {
     margin-bottom:40px;
+    padding:20px;
 }
 
 table.cart img {
@@ -402,6 +404,22 @@ form p input {
 
 .orders{
 	padding:20px;
+}
+
+.border-top{
+	border-top:1px solid #000;
+}
+
+.total{
+	background-color:#eee;
+}
+
+.text-right{
+	list-style-type:none;
+}
+
+.list{
+	margin-top: 10px;
 }
 
 /*==================== 
