@@ -2,13 +2,27 @@
 
 
 {% block content %}
-	<h1>Your payment was successful</h1>
+	<h1 class="border-bottom">Your payment was successful</h1>
 	<p>Your payment has been succesfully recieved. Thank you!</p>
 
-<h1>Downloads</h1>
-{% for item in list %}
-	
-<li><a href="/download/{{ item.product.id }}/">{{ item.product.name }} - £{{ item.product.price }}</a></li>
-
-{% endfor %}
+<h1 class="border-bottom">Your Order</h1>
+<p>See your recent order below. From here you can download your videos! Want to view all your orders? You can do so from your <a href="{% url 'account' %}">account</p></a>
+<table>
+        <thead>
+            <tr class="border-bottom">
+                <th>Order</th>
+                <th>Date</th>               
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td><a class="link-box" href="{% url 'orders:detail' order.id %}">Order #{{order.id}}</a></td>
+                <td>{{ order.created }}</td>
+                <td>£{{ order.get_total_cost }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
