@@ -6,11 +6,16 @@ from paypal.standard.forms import PayPalPaymentsForm
 from orders.models import Order
 from django.views.decorators.csrf import csrf_exempt
 from django.apps import AppConfig
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @csrf_exempt
+@login_required
 def payment_done(request):
-    return render(request, 'payment/done.html' )
+    return render(request, 'payment/done.html', {
+       'orders': Order.objects.filter(user=request.user)[:1]
+   })
+
 
 
 @csrf_exempt
