@@ -102,19 +102,16 @@ p{
 	line-height:25px;
 }
 
-hr {
-	background-color:#444;
-	color:#444;
-	height:2px;
-	line-height:0;
-	margin:-.5em 10px 1.8571em 10px;
-	page-break-after:always;
-	text-align:center;
-	width:100%;
-}
+
 
 li {
 	list-style-type: square;
+}
+
+.download-list{
+	margin-bottom: 20px;
+	font-size: 1.5em;
+	list-style: none;
 }
 
 .row{
@@ -355,6 +352,7 @@ thead th, tbody tr.total {
 table.cart {
     margin-bottom:40px;
     padding:20px;
+    border-bottom:1px solid #000;
 }
 
 table.cart img {
@@ -429,9 +427,7 @@ form p input {
 	background-color:#eee;
 }
 
-.text-right{
-	list-style-type:none;
-}
+
 
 .list{
 	margin-top: 10px;
