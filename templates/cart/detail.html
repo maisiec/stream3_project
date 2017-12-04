@@ -7,8 +7,7 @@
 
 {% block content %}
     <h1 class="border-bottom">Your shopping cart</h1>
-    <ul class="orders">
-    <table>
+    <table class="cart">
         <thead>
             <tr class="border-bottom">
                 <th>Product</th>
@@ -26,15 +25,14 @@
             </tr>
             {% endwith %}
         {% endfor %}
-        <tr class="border-top total">
+        <tr class="total">
             <td>Total</td>
-            <td colspan="4">{{ cart.get_total_price }}</td>
-            
+            <td colspan="2" >{{ cart.get_total_price }}</td> 
         </tr>
         </tbody>
     </table>
-</ul>
-    <ul class="text-right">
+
+    <ul class="text-right ">
         <li><a class="btn list" href="{% url 'products' %}" class="button light">Continue shopping</a></li>
         <li><a class="btn list" href="{% url "orders:order_create" %}" class="button">Checkout</a></li>
     </ul>
