@@ -105,7 +105,7 @@ p{
 
 
 li {
-	list-style-type: square;
+	list-style-type: none;
 }
 
 .download-list{
@@ -116,6 +116,11 @@ li {
 
 .row{
 	margin-top:20px;
+}
+
+ul#no-list{
+	list-style-type: none;
+	list-style: none;
 }
 
 /*==================== 
