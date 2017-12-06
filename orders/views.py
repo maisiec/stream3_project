@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_list_or_404, get_object_or_40
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
 from products.models import Product
@@ -51,11 +51,14 @@ def order_detail(request, id):
 
 
 @login_required
-def download(request, id):
+def download(request, order_id, product_id):
     ''''''
-    obj = get_object_or_404(Product, pk=id)
-    filename = obj.video.name.split('/')[-1]
-    response = HttpResponse(obj.video, "video/mp4")
+    order = get_object_or_404(Order, pk=int(order_id))
+    if not order.paid:
+        raise Http404
+    product = get_object_or_404(Product, pk=product_id)
+    filename = product.video.name.split('/')[-1]
+    response = HttpResponse(product.video, "video/mp4")
     response['Content-Disposition'] = 'attachment; filename={}'.format(filename)
     return response
 

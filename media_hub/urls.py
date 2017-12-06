@@ -47,7 +47,7 @@ urlpatterns = [
     # Product URLS 
     url(r'^products/$', product_views.all_products, name='products'),
     url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', product_views.product_detail, name='product_detail'),
-    url(r'^download/(?P<id>\d+)/$', order_views.download, name='download'), # view a purchase
+    url(r'^download/(?P<order_id>\d+)/(?P<product_id>\d+)/$', order_views.download, name='download'), # view a purchase
     
     
 ]
