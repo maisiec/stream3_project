@@ -5,3 +5,11 @@ $('.product_video').hover(function toggleControls() {
         this.setAttribute("controls", "controls");
     }
 });
+
+$(function() {
+        $(".dropdown").hover(
+            function(){ $(this).addClass('open') },
+            function(){ $(this).removeClass('open') }
+        );
+    });
+  
