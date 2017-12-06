@@ -19,12 +19,17 @@
 		<a id="brand" href="/"><svg id="wayvdLogo" data-name="wayvdLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.87 108" width="200" height="80"><defs><style>.cls-1{font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wayvdLogo</title><text class="cls-1" transform="translate(0 75.28)">wAYvD</text></svg></a>
 		
 		<ul class="nav navbar-nav navbar-right nav-effect">
-			<li><a class="navlink" href="/">Home</a></li>
-			<li><a class="navlink" href="#">About</a></li>
-			<li><a class="navlink" href="#">Contact</a></li>
-			<li><a class="navlink" href="/products">Products</a></li>
-			{% if user.is_authenticated %}
-              <li><a class="navlink" href="{% url 'account' %}">Account</a></li>
+      <li><a class="navlink" href="/">Home</a></li>
+      <li><a class="navlink" href="#">About</a></li>
+      <li><a class="navlink" href="#">Contact</a></li>
+      <li><a class="navlink" href="/products">Products</a></li>
+      {% if user.is_authenticated %}
+              <li class="dropdown">
+                <a class="navlink dropdown-toggle" href="{% url 'account' %}">Account</a>
+                <ul class="dropdown-menu">
+                  <li><a class="navlink" href="{% url 'orders:list' %}">Orders</a></li>
+                </ul>
+              </li>
               <li><a class="navlink" href="{%  url 'logout'  %}">Log Out</a></li>
             {% else %}
               <li><a class="navlink" href="{% url 'register' %}">Register</a></li>
@@ -54,6 +59,7 @@
 <!-- script references -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 {% block tail_js %}
     
     
