@@ -89,6 +89,21 @@ a:focus {
 	
 }
 
+.dropdown-toggle:active, .open .dropdown-toggle,
+.dropdown-toggle:focus, .open .dropdown-toggle
+ {
+        background:#FFF !important; 
+        color:#000 !important;
+        border-bottom:1px solid #000 !important;
+    }
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 
 h2, h1, h3{
 	color:#000;
