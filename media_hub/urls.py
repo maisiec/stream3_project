@@ -43,6 +43,8 @@ urlpatterns = [
     #Paypal URLS 
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^payment/', include('payment.urls', namespace='payment')),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+
 
     # Product URLS 
     url(r'^products/$', product_views.all_products, name='products'),
