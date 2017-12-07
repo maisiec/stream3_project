@@ -1,8 +1,10 @@
+from decimal import Decimal
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.http import HttpResponse, Http404
+from paypal.standard.forms import PayPalPaymentsForm
 from .models import OrderItem, Order, order_created
 from .forms import OrderCreateForm
 from products.models import Product
@@ -45,9 +47,26 @@ def order_list(request):
 @login_required
 def order_detail(request, id):
     order = get_object_or_404(Order, user=request.user, pk=id)
+    host = request.get_host()
+    paypal_dict = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '%.2f' % order.get_total_cost().quantize(Decimal('.01')),
+        'currency_code': 'GBP',
+        'item_name': 'Order {}'.format(order.id),
+        'invoice': str(order.id),
+        'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
+        'return_url': 'http://{}{}'.format(host, reverse('payment:done')),
+        'cancel_return': 'http://{}{}'.format(host, reverse('payment:canceled')),
+    }
+    form = PayPalPaymentsForm(initial=paypal_dict)
     return render(request, 'orders/detail.html', {
-        'order': order
+        'order': order, 'form':form
     })
+
+    
+    
+    
+    
 
 
 @login_required
@@ -55,11 +74,17 @@ def download(request, order_id, product_id):
     ''''''
     order = get_object_or_404(Order, pk=int(order_id))
     if not order.paid:
-        raise Http404
+        return render(request, 'error.html')
     product = get_object_or_404(Product, pk=product_id)
     filename = product.video.name.split('/')[-1]
     response = HttpResponse(product.video, "video/mp4")
     response['Content-Disposition'] = 'attachment; filename={}'.format(filename)
     return response
+
+
+    
+
+       
+ 
 
     
