@@ -3,14 +3,16 @@
 <div class="page-border-bot">
     <h1 class="border-bottom">Order #{{ order.id }}</h2>
     <ul>
-    {% if order.paid %}
-    	{% for item in order.items.all %}
-    		<li class="download-list" >Item {{forloop.counter}}: {{item.product.name }} £{{ item.price }}</li><a class="link-box" target="_blank" href="{% url 'download' order.id item.product.id %}">download</a>
-    {% endfor %}
-    {% else %}
-    <p>You're yet to pay for this video, but don't worry you can do do here</p>
-    {{ payment_process.form.render }}
-    {% endif %}
+    
+    {% for item in order.items.all %}
+    	<li class="download-list" >Item {{forloop.counter}}: {{item.product.name }} £{{ item.price }}</li>
+        {% if order.paid %}
+        <a class="link-box" target="_blank" href="{% url 'download' order.id item.product.id %}">download</a>
+        {% else %}
+        <p>You're yet to pay for this video, but don't worry you can do do here</p>
+        {{ form.render }}
+        {% endif %}
+        {% endfor %}
     </ul>
    </div>
-{% endblock %}
+    {% endblock %}
