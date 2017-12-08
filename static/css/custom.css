@@ -18,26 +18,25 @@ body {
 	line-height:1;
 }
 
-::-moz-selection { /* Code for Firefox */
-    color: #fff;
-    background: #4c4c4c;
-}
 
-::selection {
+::selection,
+::-moz-selection{
     color: #fff;
     background: #4c4c4c;
 }
 
 #wayvdLogo {
 	margin:10px;
-	text-decoration
+	text-decoration;
+
 }
 
 #brand:hover {
 	border-bottom:none;
 }
 
-#brand::selection {
+#brand::selection,
+#brand::-moz-selection {
 	border-bottom:none;
 	color:none;
 	background: none;
@@ -49,6 +48,12 @@ body {
 
 .nav {
 	margin-top:20px;
+}
+
+.nav::selection,
+.nav::-moz-selection{
+	color:none;
+	background: none;
 }
 
 a {
@@ -87,6 +92,44 @@ a:focus {
 	color:#333;
 	background:none;
 	
+}
+
+.toggle-link {
+  color:#000;
+  text-decoration:none;
+}
+
+.toggle-link:hover{
+    color:#bcff25;
+    text-decoration:none;
+}
+
+.toggle-link:active{
+  text-decoration:none;
+  color:#000;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+
+#nav-toggle {
+  width:1.4em;
+  display: block;
+  background:#ddd;
+  font-size:1.35em;
+  text-align: center;
+  overflow:hidden;
+  float:right;
+  border-radius:10%;
+  flex-direction:column;
+
+}
+#main-nav.inactive {
+  display: none;
+}
+#main-nav.active {
+  display:table;
 }
 
 .dropdown-toggle:active, .open .dropdown-toggle,
@@ -457,6 +500,17 @@ form p input {
     MEDIA QUERIES
 ======================*/
 
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 60em) {
 	.frame {
 		display: block;
@@ -515,7 +569,13 @@ video {
 
 /* Portrait tablets and small desktops */
 @media screen and (min-width: 768px) {
-
+	
+	#nav-toggle {
+          display: none;
+        }
+        #main-nav.inactive {
+            display: block;
+        }
        
 }
 
