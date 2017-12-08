@@ -22,11 +22,3 @@ def product_detail(request, id, slug):
     			{"product": product,
                  "cart_product_form": cart_product_form})
                    
-
-#def download_page(request):
- #      ''' The page that you arrive back to from a succesful purchase'''
-       #return render(request, "products/download.html", {"products":products})
-
-#def download_link(request):
-   #    ''' '''
-      #return 
