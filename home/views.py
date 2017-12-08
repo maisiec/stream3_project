@@ -7,3 +7,5 @@ from django.shortcuts import render
 def get_index(request):
    return render(request, 'index.html')
 
+def about(request):
+	return render(request, 'about/about.html')

@@ -18,7 +18,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.static import serve
 from .settings import MEDIA_ROOT
-from home import views
+from home import views as home_views
 from paypal.standard.ipn import urls as paypal_urls
 from payment import views as paypal_views
 from products import views as product_views
@@ -28,13 +28,13 @@ from orders import views as order_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
-    url(r'^$', views.get_index),
+    url(r'^$', home_views.get_index),
+    url(r'^about/$', home_views.about, name='about'),
     
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
 
-    #Account URLS
-    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    #User URLS
     url(r'^register/$', register, name='register'),
     url(r'^account/$', account, name='account'),
     url(r'^login/$', login, name='login'),
