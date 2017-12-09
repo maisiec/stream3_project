@@ -18,25 +18,37 @@ body {
 	line-height:1;
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #4c4c4c;
+}
 
-::selection,
-::-moz-selection{
+::selection {
     color: #fff;
     background: #4c4c4c;
 }
 
 #wayvdLogo {
 	margin:10px;
-	text-decoration;
-
+	
 }
 
-#brand:hover {
+#plain{
+	background-image:none;
+	border-bottom:none;
+	box-shadow:none;
+}
+
+.nav-logo{
+	width:30%;
+	float:left;
+}
+
+#wayvdLogo:hover {
 	border-bottom:none;
 }
 
-#brand::selection,
-#brand::-moz-selection {
+#wayvdLogo::selection {
 	border-bottom:none;
 	color:none;
 	background: none;
@@ -46,15 +58,7 @@ body {
 	width:100%;
 }
 
-.nav {
-	margin-top:20px;
-}
 
-.nav::selection,
-.nav::-moz-selection{
-	color:none;
-	background: none;
-}
 
 a {
 	text-decoration: none;
@@ -69,6 +73,8 @@ a:focus {
 	text-decoration: none;
 	
 }
+
+
 
 .navlink:hover,
 .navlink:focus {
@@ -92,44 +98,6 @@ a:focus {
 	color:#333;
 	background:none;
 	
-}
-
-.toggle-link {
-  color:#000;
-  text-decoration:none;
-}
-
-.toggle-link:hover{
-    color:#bcff25;
-    text-decoration:none;
-}
-
-.toggle-link:active{
-  text-decoration:none;
-  color:#000;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-
-#nav-toggle {
-  width:1.4em;
-  display: block;
-  background:#ddd;
-  font-size:1.35em;
-  text-align: center;
-  overflow:hidden;
-  float:right;
-  border-radius:10%;
-  flex-direction:column;
-
-}
-#main-nav.inactive {
-  display: none;
-}
-#main-nav.active {
-  display:table;
 }
 
 .dropdown-toggle:active, .open .dropdown-toggle,
@@ -180,6 +148,45 @@ ul#no-list{
 	list-style-type: none;
 	list-style: none;
 }
+
+.toggle-link {
+  color:#000;
+  text-decoration:none;
+}
+
+.toggle-link:hover{
+    color:grey;
+    text-decoration:none;
+}
+
+.toggle-link:active{
+  text-decoration:none;
+  color:#000;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+
+#nav-toggle {
+  width:1.4em;
+  display: block;
+  font-size:1.35em;
+  text-align: center;
+  overflow:hidden;
+  float:right;
+  border-radius:10%;
+  flex-direction:column;
+  padding:10px;
+
+}
+#main-nav.inactive {
+  display: none;
+}
+#main-nav.active {
+  display:table;
+}
+
 
 /*==================== 
         FORMS 
@@ -324,7 +331,6 @@ label{
 }
 
 .grid__item--name,
-.grid__item--title,
 .grid__item--text {
 	pointer-events: none;
 	padding: 0;
@@ -344,24 +350,13 @@ label{
 	color: var(--grid-name-text);
 }
 
-.grid__item--title {
-	font-size: 3.5vh;
-	text-transform: uppercase;	
-	-webkit-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	text-align: right;
-	display: flex;
-	justify-content: flex-end;
-	color: #ef3b3b;
-	color: var(--grid-title-text);
-}
 
 .grid__item--text {
-	font-size: 0.85em;
+	font-size: 1em;
 	line-height: 1.2;
 	display: flex;
 	color: inherit;
-	color: var(--grid-text);
+	
 }
 
 
@@ -500,17 +495,6 @@ form p input {
     MEDIA QUERIES
 ======================*/
 
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 60em) {
 	.frame {
 		display: block;
@@ -542,7 +526,6 @@ form p input {
 	}
 
 	.grid__item--name,
-	.grid__item--title,
 	.grid__item--text {
 		grid-column: 1 / -1 !important;
 		justify-content: flex-start;
@@ -569,14 +552,18 @@ video {
 
 /* Portrait tablets and small desktops */
 @media screen and (min-width: 768px) {
-	
-	#nav-toggle {
+
+        #nav-toggle {
           display: none;
         }
         #main-nav.inactive {
             display: block;
         }
-       
+
+        .nav-logo{
+        	float: left;
+        }
+        }
 }
 
 /* Landscape phones and portrait tablets */
@@ -589,6 +576,10 @@ video {
 @media (max-width: 480px) {
 .form-wrap{
 	width:100%;
+}
+
+.nav-logo{
+	width:70%;
 }
        
 }
