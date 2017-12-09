@@ -4,7 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>{% block title %}Media Hub{% endblock %}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
@@ -15,11 +17,25 @@
 	
 </head>
 <body>
-	<div class="masthead">
-		<a id="brand" href="/"><svg id="wayvdLogo" xmlns="http://www.w3.org/2000/svg" width="500" height="90" viewBox="0 0 532 93"><defs><style>.cls-1{isolation:isolate;font-size:85px;font-family:RansomNote, RansomNote;}</style></defs><title>wAYv ViDEOS</title><text class="cls-1" transform="translate(6 81.28)">wAYv ViDEOS</text></svg></a>
-		
-   
-		<ul id="main-nav" class="nav navbar-nav navbar-right nav-effect inactive">
+
+  <nav id="plain" class="nav navbar">
+
+    <div class="container-fluid">
+
+    <div class="nav-logo">
+    <a href="/">
+		<img src="{% static 'img/wayvdLogo.svg' %}">
+    </a>
+    </div>
+
+
+		<div id="menu-select"></div>
+                <div id="nav-toggle">
+                    <a class="toggle-link" href="#">&#9776;</a>
+                </div>
+
+   <div id="main-nav" class="inactive">
+		<ul class="nav navbar-nav navbar-right nav-effect ">
       <li><a class="navlink" href="/">Home</a></li>
       <li><a class="navlink" href="/about">About</a></li>
       <li><a class="navlink" href="#">Contact</a></li>
@@ -46,11 +62,9 @@
                 {% endif %}
             {% endwith %} 
     </ul>
-  <div id="menu-select"></div>
-                <div id="nav-toggle">
-                    <a class="toggle-link" href="#">&#9776;</a>
-                </div>
-</div>
+  </div>
+  </div>
+</nav>
 
 
 <div class="container">
