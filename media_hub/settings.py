@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'orders',
+    'contact',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -167,3 +168,11 @@ EMAIL_HOST_USER = 'maaisiexx@gmail.com'
 EMAIL_HOST_PASSWORD = 'qpwoeiruTY1'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+#TESTING MAIL 
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#DEFAULT_FROM_EMAIL = 'testing@example.com'
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_USE_TLS = False 
+#EMAIL_PORT = 1025
