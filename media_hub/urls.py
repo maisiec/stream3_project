@@ -24,6 +24,7 @@ from payment import views as paypal_views
 from products import views as product_views
 from accounts.views import register, account, login, logout
 from orders import views as order_views 
+from contact.views import contact
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -33,6 +34,8 @@ urlpatterns = [
     
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
+
+    url(r'^contact/', contact, name='contact'),
 
     #User URLS
     url(r'^register/$', register, name='register'),
