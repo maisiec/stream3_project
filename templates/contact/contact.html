@@ -1,4 +1,14 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
 {% block content %}
-
+<div class=form-wrap>
+	<legend class="border-bottom">Contact us ! </legend>
+    <form class="lcontact-form" role="form" method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form| as_bootstrap }}
+        <div class="form-group">
+        	<button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
