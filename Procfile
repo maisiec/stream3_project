@@ -1,0 +1,1 @@
+web: gunicorn media_hub.wsgi:application

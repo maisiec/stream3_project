@@ -57,4 +57,8 @@ urlpatterns = [
     
 ]
 
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns.append(url(r'^debug/', include(debug_toolbar.urls)))
+
     

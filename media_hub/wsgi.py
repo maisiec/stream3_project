@@ -1,5 +1,5 @@
 """
-WSGI config for media_hub project.
+WSGI config for we_are_social project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "media_hub.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.dev")
 
 application = get_wsgi_application()
+application = DjangoWhiteNoise(application)

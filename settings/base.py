@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'tu1*p@11^)2_lr9hrgmm%3z(-plrn&956af(%^fhcae3-$f%dx'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','http://ec38397f.ngrok.io/']
+
+ALLOWED_HOSTS = ['wayv-videos.herokuapp.com/']
 SITE_ID = 2
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -96,15 +95,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'media_hub.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -149,12 +140,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-# PayPal Settings
-RESOURCES_DIR = 'media/product_videos/'
-SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://ec38397f.ngrok.io//a-very-hard-to-guess-url/'
-PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
-PAYPAL_TEST = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -162,17 +147,3 @@ MEDIA_URL = '/media/'
 
 CART_SESSION_ID = 'cart'
 
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_HOST_USER = 'maaisiexx@gmail.com'
-#EMAIL_HOST_PASSWORD = 'qpwoeiruTY1'
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-
-#TESTING MAIL 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'testing@example.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False 
-EMAIL_PORT = 1025
