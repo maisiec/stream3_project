@@ -11,6 +11,14 @@ DATABASES = {
     }
 }
 
+# Update database configuration with $DATABASE_URL.
+
+
+# Load the ClearDB connection details from the environment variable
+DATABASES = {
+    'default': dj_database_url.config('CLEARDB_DATABASE_URL')
+}
+
 # Paypal environment variables
 PAYPAL_NOTIFY_URL = 'http://ec38397f.ngrok.io//a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
