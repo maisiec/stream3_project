@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.static import serve
-from .settings import MEDIA_ROOT
+from settings.base import MEDIA_ROOT
 from home import views as home_views
 from paypal.standard.ipn import urls as paypal_urls
 from payment import views as paypal_views
