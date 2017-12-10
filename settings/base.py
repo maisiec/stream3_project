@@ -25,7 +25,7 @@ SECRET_KEY = 'tu1*p@11^)2_lr9hrgmm%3z(-plrn&956af(%^fhcae3-$f%dx'
 
 
 
-ALLOWED_HOSTS = ['wayv-videos.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'd8d947ba.ngrok.io']
 SITE_ID = 2
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -135,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),

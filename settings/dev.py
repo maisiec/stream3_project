@@ -18,7 +18,7 @@ DATABASES = {
 
 # PayPal Settings
 RESOURCES_DIR = 'media/product_videos/'
-SITE_URL = 'http://wayv-videos.herokuapp.com/'
-PAYPAL_NOTIFY_URL = 'http://wayv-videos.herokuapp.com/'
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAL_NOTIFY_URL = 'https://d8d947ba.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
 PAYPAL_TEST = True
