@@ -63,11 +63,6 @@ def order_detail(request, id):
         'order': order, 'form':form
     })
 
-    
-    
-    
-    
-
 
 @login_required
 def download(request, order_id, product_id):
