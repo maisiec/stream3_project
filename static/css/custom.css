@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 }
 
-body {
+html, body {
 	/* Grid gap */
 	--gap: 10px;
 	font-family: 'Fakt Normal','Roboto', Helvetica, sans-serif;
@@ -16,6 +16,7 @@ body {
 	color: #000;
 	background: #fff;
 	line-height:1;
+	height:100%;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -184,6 +185,24 @@ ul#no-list{
 }
 #main-nav.active {
   display:table;
+}
+
+
+/*==================== 
+       FOOTER
+======================*/
+.container{
+	width: 100%;
+    margin: 0 auto;
+    height:100%;
+}
+
+.footerLogo{
+	width:50%;
+}
+
+.footer-list{
+	line-height:30px
 }
 
 
@@ -383,6 +402,21 @@ label{
 
 
 /*==================== 
+ ABOUT PAGE CARROUSEL 
+======================*/
+div.c-wrapper
+{
+    width: 80%; /* for example */
+    margin: auto;
+}
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img
+{
+width: 100%; /* use this, or not */
+margin: auto;
+}
+/*==================== 
     TABLE 
 ======================*/
 
@@ -516,6 +550,9 @@ form p input {
 		grid-auto-columns: auto !important;
 		grid-gap: 1vw;
 	}
+	
+
+	
 
 	.grid__item {
 		min-height: 50px;
@@ -566,8 +603,7 @@ video {
         	float: left;
         }
 
-        .form-wrap{
-	width:100%;
+
 }
         
 }
@@ -586,6 +622,10 @@ video {
 
 .nav-logo{
 	width:70%;
+}
+
+.link-box{
+	border: none;
 }
        
 }
