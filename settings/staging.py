@@ -1,17 +1,12 @@
 from base import *
+import os
+import dj_database_url
+import settings
 
 DEBUG = False 
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-# Update database configuration with $DATABASE_URL.
 
 
 # Load the ClearDB connection details from the environment variable
@@ -20,7 +15,7 @@ DATABASES = {
 }
 
 # Paypal environment variables
-PAYPAL_NOTIFY_URL = 'http://ec38397f.ngrok.io//a-very-hard-to-guess-url/'
+PAYPAL_NOTIFY_URL = 'https://d8d947ba.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
  
 SITE_URL = 'http://wayv-videos.herokuapp.com/'
