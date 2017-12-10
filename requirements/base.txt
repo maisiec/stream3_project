@@ -25,7 +25,6 @@ python-dateutil==2.6.0
 pytz==2017.2
 requests==2.17.3
 requirements==0.1
-reusable-blog-app==1.0.0
 setupfiles==0.0.50
 site-packages==0.0.0
 six==1.10.0
