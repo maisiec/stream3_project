@@ -18,3 +18,4 @@ Pillow==4.1.1
 python-dateutil==2.6.0
 pytz==2017.2
 requests==2.14.2
+whitenoise==3.3.1
