@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
+from settings.base import MEDIA_ROOT
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.static import serve
-from settings.base import MEDIA_ROOT
 from home import views as home_views
 from paypal.standard.ipn import urls as paypal_urls
 from payment import views as paypal_views
@@ -25,6 +25,7 @@ from products import views as product_views
 from accounts.views import register, account, login, logout
 from orders import views as order_views 
 from contact.views import contact
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
