@@ -21,11 +21,14 @@ This website is a media hub where users can browse through and purchase old vide
 - ability to register an account, login and out.
 - products page populated with stock footage user can purchase 
 - ability to view each seperate product stock video description and purchase.
-
-### Features Left to Implement 
 - ability to add products to a cart 
 - about page describing the website purpose.
-- user profile.
+- user accout.
+
+### Features Left to Implement 
+
+
+
 
 
 ## Tech Used
@@ -41,14 +44,13 @@ This website is a media hub where users can browse through and purchase old vide
 	- **Bootstrap** to give the website a simple, responsive layout. 
 - [PayPal](https://developer.paypal.com/developer/accounts/)
   - **PayPal Sandbox** The PayPal Sandbox is a self-contained, virtual testing environment that mimics the live PayPal production environment. Providing a shielded space where you can initiate and watch your application process the requests you make to the PayPal APIs without touching any live PayPal accounts.
--[Celery](http://celery.readthedocs.io/en/latest/)
-	- **Celery** is a simple, flexible, and reliable distributed system to process vast amounts of messages, while providing operations with the tools required to maintain such a system. It’s a task queue with focus on real-time processing, while also supporting task scheduling.
 - [RabbitMQ](https://www.rabbitmq.com/)
 	- **RabbitMQ** is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
 
 
 ## Testing
-- None yet
+- Django testing
 
 ## Credits
 - modified Codrops [gridlayout](https://github.com/codrops/GridLayoutSlideshow/) for home page.
+- Shopping Cart [Django By Example - Antonio Mele](http://djangobyexample.com/) followed this and modified to fit project
