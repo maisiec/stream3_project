@@ -1,1 +1,1 @@
-web: gunicorn wayv-videos.wsgi:application
+web: gunicorn media_hub.wsgi:application
