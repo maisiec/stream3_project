@@ -71,10 +71,50 @@
        {% block content %}
        {% endblock %}
    </div>
-  
-   <div class="footer">
-       
-   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="container">
+    <div class="row">
+        
+        <div class="col-sm-4">
+          <img class="footerLogo" src="{% static 'img/wayvdLogo.svg' %}">
+                <p>Wayv Videos! vintage, nostalgic videos filmed on a Sony Handy Cam using Hi 8 video tape.</p>
+        </div>
+
+        <div class="col-sm-4 footer-list">
+         <h4 class="border-bottom">Menu</h4>
+           <ul class="pages">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/products">Products</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-4 footer-list">
+         {% if user.is_authenticated %}
+              <h4 class="border-bottom">Account</h4>
+              <div class="col-md-6">
+                    <ul class="list">
+                      <li><a href="{% url 'account' %}">Account</a></li>
+                      <li><a href="{% url 'orders:list' %}">Orders</a></li>
+                      <li><a  href="{%  url 'logout'  %}">Log Out</a></li>
+                    </ul>
+                    {% else %}
+              <h4 class="border-bottom">Login</h4>
+                  <ul class="list">
+                    <li><a class="navlink" href="{% url 'register' %}">Register</a></li>
+                    <li><a class="navlink" href="{% url 'login' %}">Log In</a></li>
+                  </ul>
+                  {% endif %} 
+              </div>
+            </div>
+          </div>
+        </div>
+        </footer>
+
+    
 <!-- script references -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
