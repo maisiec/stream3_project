@@ -5,7 +5,7 @@ from django.template import Context
 from django.template.loader import get_template
 # Create your views here.
 def contact(request):
-		contactForm= ContactForm
+		contactForm = ContactForm
 
 		if request.method == 'POST':
 			form = contactForm(request.POST)
