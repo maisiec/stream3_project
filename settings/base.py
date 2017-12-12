@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'paypal.standard.ipn',
-    'rest_framework',
+    #'rest_framework',
     'payment',
     'home',
     'accounts',
