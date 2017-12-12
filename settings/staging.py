@@ -18,7 +18,7 @@ PAYPAL_NOTIFY_URL = 'https://d8d947ba.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'maaisiexx-facilitator@hotmail.co.uk'
  
 SITE_URL = 'http://wayv-videos.herokuapp.com/'
-ALLOWED_HOSTS.append('wayv-videos.herokuapp.com/')
+ALLOWED_HOSTS = ('wayv-videos.herokuapp.com',)
  
 # Log DEBUG information to the console
 LOGGING = {

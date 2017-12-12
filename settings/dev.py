@@ -16,6 +16,9 @@ DATABASES = {
     }
 }
 
+INTERNAL_IPS = ('127.0.0.1',)
+ALLOWED_HOSTS = ['127.0.0.1','http://ec38397f.ngrok.io/']
+
 # PayPal Settings
 RESOURCES_DIR = 'media/product_videos/'
 SITE_URL = 'http://127.0.0.1:8000'
