@@ -226,7 +226,7 @@ ul#no-list{
 .form-control {
 	background-color: #fff;
     margin-bottom: 28px;
-	background: #fffl
+	background: #fff;
     padding: 0 12px;
     font-size: 1em;
     color: #000;
@@ -255,17 +255,6 @@ ul#no-list{
 	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);   
 }
 
-#id_email:focus,
-#id_password:focus,
-#id_password1:focus,
-#id_password2:focus,
-#id_first_name:focus,
-#id_last_name:focus,
-#id_full_name:focus,{
-	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
-}
 
 
 .form-control:focus{
