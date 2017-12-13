@@ -9,9 +9,7 @@ DEBUG = False
 
 
 # Load the ClearDB connection details from the environment variable
-DATABASES = {
-    'default': dj_database_url.config()
-}
+DATABASES['default'] =  dj_database_url.config()
 
 # Paypal environment variables
 PAYPAL_NOTIFY_URL = 'https://d8d947ba.ngrok.io/a-very-hard-to-guess-url/'
