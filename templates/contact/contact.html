@@ -3,7 +3,7 @@
 {% block content %}
 <div class=form-wrap>
 	<legend class="border-bottom">Contact us ! </legend>
-    <form class="lcontact-form" role="form" method="post" action="{% url 'contact' %}">
+    <form class="contact-form" role="form" method="post" action="{% url 'contact' %}">
         {% csrf_token %}
         {{ form| as_bootstrap }}
         <div class="form-group">
