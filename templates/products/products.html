@@ -15,7 +15,7 @@
                 {% if forloop.counter0|divisibleby:3 %} <div class="row page-border-bot text-center"> {%  endif %}
                   <div class="col-md-4">
                       <video class="product_video" controlsList="nodownload">
-                                <source src="/media/{{ product.video }}"type="video/mp4"></video>
+                                <source src="{{ product.video.url }}" type="video/mp4"></video>
                             <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
                             <p>£{{ product.price }}</p>
                             
