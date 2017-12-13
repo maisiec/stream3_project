@@ -43,25 +43,27 @@ LOGGING = {
 # - https://github.com/boto/boto
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_STORAGE_BUCKET_NAME = "wayv-production"
-AWS_AUTO_CREATE_BUCKET = True
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+#AWS_STORAGE_BUCKET_NAME = "wayv-production"
+#AWS_AUTO_CREATE_BUCKET = True
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'media_hub.storages.StaticS3Boto3Storage'
-STATIC_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+#STATICFILES_LOCATION = 'static'
+#STATICFILES_STORAGE = 'media_hub.storages.StaticS3Boto3Storage'
+#STATIC_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 
 # Media files
 #
 
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'media_hub.storages.MediaS3Boto3Storage'
+#MEDIAFILES_LOCATION = 'media'
+#MEDIA_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+#DEFAULT_FILE_STORAGE = 'media_hub.storages.MediaS3Boto3Storage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
