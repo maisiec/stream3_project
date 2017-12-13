@@ -62,7 +62,6 @@ AUTHENTICATION_BACKENDS = (
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,9 +93,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'media_hub.wsgi.application'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -152,9 +148,6 @@ STATICFILES_DIRS = (
 )
 
 # Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # PayPal Settings
 RESOURCES_DIR = 'media/product_videos/'
