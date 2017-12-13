@@ -55,9 +55,6 @@ html, body {
 	background: none;
 }
 
-.container{
-	width:100%;
-}
 
 
 a {
@@ -194,15 +191,18 @@ ul#no-list{
 .container{
 	width: 100%;
     margin: 0 auto;
-    height:100%;
+    min-height:100%;
+   position:relative;
+   margin-top:10px;
 }
+
 
 .footerLogo{
 	width:50%;
 }
 
 .footer-list{
-	line-height:30px
+	line-height:30px;
 }
 
 
@@ -254,7 +254,6 @@ ul#no-list{
 	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);   
 }
-
 
 
 .form-control:focus{
