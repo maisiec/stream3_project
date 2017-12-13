@@ -50,7 +50,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'storages.StaticS3Boto3Storage'
+STATICFILES_STORAGE = 'media_hub.storages.StaticS3Boto3Storage'
 STATIC_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 
@@ -59,7 +59,7 @@ STATIC_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATIO
 
 MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://{0}/{1}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'storages.MediaS3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'media_hub.storages.MediaS3Boto3Storage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
