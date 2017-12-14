@@ -137,6 +137,11 @@ li {
 	list-style: none;
 }
 
+#download_btn{
+	margin: 0 0 20px 0;
+	position:relative;
+}
+
 .row{
 	margin-top:20px;
 }
