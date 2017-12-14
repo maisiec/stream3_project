@@ -7,7 +7,9 @@
     {% for item in order.items.all %}
     	<li class="download-list" >Item {{forloop.counter}}: {{item.product.name }} £{{ item.price }}</li>
         {% if order.paid %}
-        <a  id="download_btn" class="link-box" target="_blank" href="{% url 'orders:download' order.id item.product.id %}">download</a>
+        <div id="download_btn">
+        <a class="link-box" target="_blank" href="{% url 'orders:download' order.id item.product.id %}">download</a>
+        </div>
         {% else %}
         <p>You're yet to pay for this video, but don't worry you can do do here</p>
         {{ form.render }}
