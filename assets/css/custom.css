@@ -243,22 +243,6 @@ ul#no-list{
     
 }
 
-#id_email:valid,
-#id_password:valid,
-#id_password1:valid,
-#id_password2:valid,
-#id_first_name:valid,
-#id_last_name:valid,
-#id_full_name:valid,
-#id_content:valid{   
-	background-color:#F9FFB0;
-	outline: 0 none;
-	border: 1px #000 solid;
-	border-radius: 0px;
-	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);   
-}
 
 
 .form-control:focus{
@@ -266,6 +250,7 @@ ul#no-list{
 	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
 }
+
 
 
 label.control-label{
