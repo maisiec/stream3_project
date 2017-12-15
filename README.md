@@ -28,6 +28,7 @@ This website is a media hub where users can browse through and purchase old vide
 - static and media files hosted on Amazon S3 to host videos properly with heroku.
 - ability to fill out and send a contact form for any questions.
 - footer navigation.
+- about page with image carousel. 
 
 ### Features Left to Implement / Improve on
 - imrpove secruity of accessing download videos. 
