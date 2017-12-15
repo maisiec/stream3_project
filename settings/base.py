@@ -1,3 +1,4 @@
+
 """
 Django settings for media_hub project.
 
@@ -26,9 +27,7 @@ SECRET_KEY = 'tu1*p@11^)2_lr9hrgmm%3z(-plrn&956af(%^fhcae3-$f%dx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','http://ec38397f.ngrok.io/']
 SITE_ID = 2
-INTERNAL_IPS = ('127.0.0.1',)
 
 
 
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'paypal.standard.ipn',
-    'rest_framework',
+    #'rest_framework',
     'payment',
     'home',
     'accounts',
@@ -95,7 +94,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'media_hub.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -144,10 +142,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "assets"),
 )
+
+# Simplified static file serving.
 
 # PayPal Settings
 RESOURCES_DIR = 'media/product_videos/'

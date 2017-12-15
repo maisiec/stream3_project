@@ -55,9 +55,6 @@ html, body {
 	background: none;
 }
 
-.container{
-	width:100%;
-}
 
 
 a {
@@ -140,6 +137,11 @@ li {
 	list-style: none;
 }
 
+#download_btn{
+	margin: 0 0 20px 0;
+	position:relative;
+}
+
 .row{
 	margin-top:20px;
 }
@@ -194,15 +196,18 @@ ul#no-list{
 .container{
 	width: 100%;
     margin: 0 auto;
-    height:100%;
+    min-height:100%;
+   position:relative;
+   margin-top:10px;
 }
+
 
 .footerLogo{
 	width:50%;
 }
 
 .footer-list{
-	line-height:30px
+	line-height:30px;
 }
 
 
@@ -226,7 +231,7 @@ ul#no-list{
 .form-control {
 	background-color: #fff;
     margin-bottom: 28px;
-	background: #fffl
+	background: #fff;
     padding: 0 12px;
     font-size: 1em;
     color: #000;
@@ -238,41 +243,12 @@ ul#no-list{
     
 }
 
-#id_email:valid,
-#id_password:valid,
-#id_password1:valid,
-#id_password2:valid,
-#id_first_name:valid,
-#id_last_name:valid,
-#id_full_name:valid,
-#id_content:valid{   
-	background-color:#F9FFB0;
-	outline: 0 none;
-	border: 1px #000 solid;
-	border-radius: 0px;
-	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);   
-}
-
-#id_email:focus,
-#id_password:focus,
-#id_password1:focus,
-#id_password2:focus,
-#id_first_name:focus,
-#id_last_name:focus,
-#id_full_name:focus,{
-	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
-}
-
-
 .form-control:focus{
 	-webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	-moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 	box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); 
 }
+
 
 
 label.control-label{
