@@ -3,7 +3,7 @@ beautifulsoup4==4.4.1
 certifi==2017.11.5
 chardet==3.0.4
 disqus==0.0.4
-Django==1.8.9
+Django==1.11.29
 django-debug-toolbar==1.9.1
 django-emoticons==1.1.2
 django-extensions==1.9.8
